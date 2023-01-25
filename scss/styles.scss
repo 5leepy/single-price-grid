@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;400;700&display=swap');
+
+
+$primary-200:hsl(179, 47%, 52%);
+$primary-400:hsl(179, 62%, 43%);
+$primary-700:hsl(71, 73%, 54%);
+$neutral-400:hsl(204, 43%, 93%);
+$neutral-700:hsl(218, 22%, 67%);
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    background-color: $neutral-400;
+    display: grid;
+    place-content: center;
+    margin: 0 2rem;
+}
+.container {
+    display: grid;
+    max-width: 635px;
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: 1px 10px 25px -10px $neutral-700;
+    @media (min-width:600px) {
+        grid-template-columns: 1fr 1fr;
+        .card-top {
+        grid-area: 1/1/2/3;
+        }
+    }
+}
+
+
+.card {
+    padding: 2rem 1.375rem;
+    color: $neutral-400;
+    h2 {
+        font-size: 1.125rem;
+    }
+    @media (min-width:600px) {
+        padding: 2.375rem 2.5rem;
+        h2 {
+            font-size: 1.375rem;
+        }
+        h4 {
+            font-size: 1.125rem;
+        }
+        p {
+            font-size: 1rem;
+        }
+    }
+}
+
+button {
+    border: none;
+    background-color: $primary-700;
+    color: $neutral-400;
+    font-weight: 700;
+    padding: 18px 0 14px;
+    border-radius: .25rem;
+    box-shadow: 1px 5px 15px rgba(66, 66, 66, 30%);
+    transition: .2s ease-in-out;
+    cursor: pointer;
+    &:hover{
+    background-color:$neutral-400; 
+    color:$primary-700;
+    }
+}
+
+.card-top {
+    display: grid;
+    gap: 1.125rem;
+    background-color: #fff;
+    line-height: 1.5rem;
+    &__title {
+        color: $primary-400;
+        letter-spacing: 1px;
+    }
+    &__subtitle {
+        color: $primary-700;
+    }
+    &__text {
+        color: $neutral-700;
+        font-size: .875rem;
+    }
+}
+
+.card-mid {
+    background-color: $primary-400;
+    display: grid;
+    gap: 1.125rem;
+    &__price {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: .75rem;
+        h1 {
+            font-size: 2rem;
+        }
+        span {
+            font-weight: 200;
+        }
+    }
+}
+
+.card-bot {
+    background-color: $primary-200;
+    display: grid;
+    gap: 1.125rem;
+    &__text {
+        font-size: .875rem;
+        font-weight: 200;
+        line-height: 1.2rem;
+    }
+}
